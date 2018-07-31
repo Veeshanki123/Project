@@ -1,0 +1,135 @@
+package demo;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import javax.swing.*;
+class MyFrame extends JFrame 
+{
+JMenuBar menubar;
+JMenu mnuFile,mnuEdit,mnuFormat,mnuView,mnuHelp;
+JMenuItem mniNew,mniOpen,mniSave,mniSaveAs,mniPageSetup,mniPrint,mniExit;
+JMenuItem mniUndo,mniCut,mniCopy,mniPaste,mniDelete,mniFind,mniFindNext,mniReplace,mniGoTo,mniSelectAll,mniTimeDate;   
+JMenuItem mniWordWrap,mniFont;
+JMenuItem mniStatusBar;
+JMenuItem mniViewHelp,mniAboutNotepad;
+JTextArea editArea;
+MyFrame()
+{
+
+setSize(1000,600);
+setLocation(250,100);
+setBackground(Color.WHITE);
+setForeground(Color.BLACK);
+setTitle("Untitled-Notepad");
+menubar=new JMenuBar();
+mnuFile=new JMenu("File");
+mnuFile.setMnemonic('F');
+mnuEdit=new JMenu("Edit");
+mnuEdit.setMnemonic('E');
+mnuFormat=new JMenu("Format");
+mnuFormat.setMnemonic('F');
+mnuView=new JMenu("View");
+mnuView.setMnemonic('V');
+mnuHelp=new JMenu("Help");
+mnuHelp.setMnemonic('H');
+mniNew=new JMenuItem("New");
+KeyStroke k=KeyStroke.getKeyStroke(KeyEvent.VK_N,KeyEvent.CTRL_DOWN_MASK);
+mniNew.setAccelerator(k);
+mniOpen=new JMenuItem("Open");
+KeyStroke k1 = KeyStroke.getKeyStroke(KeyEvent.VK_O,KeyEvent.CTRL_DOWN_MASK);
+mniOpen.setAccelerator(k1);
+mniSave=new JMenuItem("Save");
+KeyStroke k2 = KeyStroke.getKeyStroke(KeyEvent.VK_S,KeyEvent.CTRL_DOWN_MASK);
+mniSave.setAccelerator(k2);
+mniSaveAs=new JMenuItem("SaveAs");
+mniPageSetup=new JMenuItem("PageSetup");
+mniPrint=new JMenuItem("Print");
+KeyStroke k3=KeyStroke.getKeyStroke(KeyEvent.VK_P,KeyEvent.CTRL_MASK);
+mniPrint.setAccelerator(k3);
+mniExit=new JMenuItem("Exit");
+mniUndo=new JMenuItem("Undo");
+KeyStroke k4=KeyStroke.getKeyStroke(KeyEvent.VK_Z,KeyEvent.CTRL_MASK);
+mniUndo.setAccelerator(k4);
+mniCut=new JMenuItem("Cut");
+KeyStroke k5=KeyStroke.getKeyStroke(KeyEvent.VK_X,KeyEvent.CTRL_MASK);
+mniCut.setAccelerator(k5);
+mniCopy=new JMenuItem("Copy");
+KeyStroke k6=KeyStroke.getKeyStroke(KeyEvent.VK_C,KeyEvent.CTRL_MASK);
+mniCopy.setAccelerator(k6);
+mniPaste=new JMenuItem("Paste");
+KeyStroke k7=KeyStroke.getKeyStroke(KeyEvent.VK_V,KeyEvent.CTRL_MASK);
+mniPaste.setAccelerator(k7);
+mniDelete=new JMenuItem("Delete");
+KeyStroke k12=KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,0);
+mniDelete.setAccelerator(k12);
+
+mniFind=new JMenuItem("Find");
+KeyStroke k8=KeyStroke.getKeyStroke(KeyEvent.VK_F,KeyEvent.CTRL_MASK);
+mniFind.setAccelerator(k8);
+mniFindNext=new JMenuItem("FindNext");
+mniFindNext.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F3,0));
+
+
+mniReplace=new JMenuItem("Replace");
+KeyStroke k9=KeyStroke.getKeyStroke(KeyEvent.VK_H,KeyEvent.CTRL_MASK);
+mniReplace.setAccelerator(k9);
+
+mniGoTo=new JMenuItem("GoTo");
+KeyStroke k10=KeyStroke.getKeyStroke(KeyEvent.VK_G,KeyEvent.CTRL_MASK);
+mniGoTo.setAccelerator(k10);
+
+mniSelectAll=new JMenuItem("SelectAll");
+KeyStroke k11=KeyStroke.getKeyStroke(KeyEvent.VK_A,KeyEvent.CTRL_MASK);
+mniSelectAll.setAccelerator(k11);
+
+mniTimeDate=new JMenuItem("TimeDate");
+mniTimeDate.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F5,0));
+mniWordWrap=new JMenuItem("WordWrap");
+mniFont=new JMenuItem("Font");
+mniStatusBar=new JMenuItem("StatusBar");
+mniViewHelp=new JMenuItem("ViewHelp");
+mniAboutNotepad=new JMenuItem("AboutNotepad");
+editArea=new JTextArea();
+mnuFile.add(mniNew);
+mnuFile.add(mniOpen);
+mnuFile.add(mniSave);
+mnuFile.add(mniSaveAs);
+mnuFile.addSeparator();
+mnuFile.add(mniPageSetup);
+mnuFile.add(mniPrint);
+mnuFile.addSeparator();
+mnuFile.add(mniExit);
+mnuEdit.add(mniUndo);
+mnuEdit.addSeparator();
+mnuEdit.add(mniCut);
+mnuEdit.add(mniCopy);
+mnuEdit.add(mniPaste);
+mnuEdit.add(mniDelete);
+mnuEdit.addSeparator();
+mnuEdit.add(mniFind);
+mnuEdit.add(mniFindNext);
+mnuEdit.add(mniReplace);
+mnuEdit.add(mniGoTo);
+mnuEdit.addSeparator();
+mnuEdit.add(mniSelectAll);
+mnuEdit.add(mniTimeDate);
+mnuFormat.add(mniWordWrap);
+mnuFormat.add(mniFont);
+mnuView.add(mniStatusBar);
+mnuHelp.add(mniViewHelp);
+mnuHelp.addSeparator();
+mnuHelp.add(mniAboutNotepad);
+menubar.add(mnuFile);
+menubar.add(mnuEdit);
+menubar.add(mnuFormat);
+menubar.add(mnuView);
+menubar.add(mnuHelp);
+this.setJMenuBar(menubar);
+this.add(editArea);
+setVisible(true);
+}
+public static void main(String args[])
+{
+MyFrame a = new MyFrame();
+}
+}
